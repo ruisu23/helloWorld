@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Deploy to Nginx'){
       steps{
-        sh 'scp ./index.html /var/www/helloWorld'
+        sh 'sudo scp ./index.html /var/www/helloWorld'
       }
     }
     stage('Smoke test'){
