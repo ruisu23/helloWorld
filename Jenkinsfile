@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Deploy to Nginx'){
       steps{
-        sh 'scp ./index.html jenkins@Ubuntu-test1:/var/www/helloWorld'
+        sh 'scp ./index.html vboxuser@Ubuntu-test1:/var/www/helloWorld'
       }
     }
     stage('Smoke test'){
