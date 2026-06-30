@@ -8,12 +8,12 @@ pipeline {
     }
     stage('Deploy to Nginx'){
       steps{
-        sh 'scp ./index.html vboxuser@Ubuntu-test1:/var/www/helloWorld'
+        sh 'cp ./index.html /var/www/helloWorld/'
       }
     }
     stage('Smoke test'){
       steps{
-        sh 'curl -s -o /dev/null -w "%{http_code}" http://your-server-ip | grep 200'
+        sh 'curl -s -o /dev/null -w "%{http_code}" http://localhost | grep 200'
       }
     }
   }
